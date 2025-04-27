@@ -16,5 +16,10 @@ footer {
   color: white;
   padding: 10px;
   text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10; /* Ensures the footer stays on top */
 }
 </style>
