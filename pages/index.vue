@@ -1,7 +1,10 @@
 <template>
   <div>
     <p>This is the homepage of your app. index.vue</p>
+
     <nuxt-link to="/about">Go to About Page</nuxt-link>
+    <nuxt-link to="/staff">Go to Staff Page</nuxt-link>
+
     <img src="~assets/images/neggy.jpg" alt="Neggy Image" />
   </div>
 </template>
