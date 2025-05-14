@@ -113,11 +113,14 @@ export default {
   text-align: center;
 }
 .staff-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+  gap: 0.5rem; /* small gap between cards */
+  justify-items: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
+
 
 /* Modal styles */
 .modal-overlay {

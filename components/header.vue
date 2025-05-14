@@ -1,10 +1,12 @@
 <template>
   <header>
-    <h1>Welcome to My Nuxt.js App</h1>
+    <h1>Snc Hospital System</h1>
     <nav class="navbar">
       <nuxt-link to="/">Home</nuxt-link>
       <nuxt-link to="/about">About</nuxt-link>
       <nuxt-link to="/staff">Staff</nuxt-link> <!-- Added the Staff link -->
+      <nuxt-link to="/contact">Contact</nuxt-link> <!-- Added the Staff link -->
+
     </nav>
   </header>
 </template>
