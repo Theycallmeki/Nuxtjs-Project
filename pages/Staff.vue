@@ -30,8 +30,8 @@
 import StaffCard from './StaffCard.vue';
 import NeggyImage from '@/assets/images/neggy.jpg';  // Importing image
 import NathImage from '@/assets/images/nath.jpg';  // Importing image
-import NathImage from '@/assets/images/nath.jpg';  // Importing image
-import NathImage from '@/assets/images/nath.jpg';  // Importing image
+import CjImage from '@/assets/images/cj.jpg';
+import JohnImage from '@/assets/images/john.jpg';
 
 export default {
   name: "Staff",
@@ -45,25 +45,25 @@ export default {
           id: 1,
           name: "Mark Eugene G. Paras",
           position: "Residnet Doctor",
-          photo: 
+          photo: NathImage
         },
         {
           id: 2,
           name: "John Micheal",
           position: "Veterinary",
-          photo: 
+          photo: NeggyImage // Using imported image
         },
         {
           id: 3,
-          name: "Jumairah ",
-          position: "Marketing Manager",
-          photo: 
+          name: "CJ Kurt Enriquez ",
+          position: "Obgyn",
+          photo: CjImage
         },
         {
           id: 4,
-          name: "Bob Brown",
-          position: "Designer",
-          photo: "https://via.placeholder.com/100"
+          name: "John Micheal Naluz",
+          position: "Head",
+          photo: JohnImage
         },
         {
           id: 5,
