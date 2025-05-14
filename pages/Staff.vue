@@ -30,7 +30,8 @@
 import StaffCard from './StaffCard.vue';
 import NeggyImage from '@/assets/images/neggy.jpg';  // Importing image
 import NathImage from '@/assets/images/nath.jpg';  // Importing image
-
+import NathImage from '@/assets/images/nath.jpg';  // Importing image
+import NathImage from '@/assets/images/nath.jpg';  // Importing image
 
 export default {
   name: "Staff",
@@ -42,21 +43,21 @@ export default {
       staffList: [
         {
           id: 1,
-          name: "Jane Doe",
-          position: "CEO",
-          photo: NathImage
+          name: "Mark Eugene G. Paras",
+          position: "Residnet Doctor",
+          photo: 
         },
         {
           id: 2,
-          name: "John Smith",
-          position: "Lead Developer",
-          photo: NeggyImage // Using imported image
+          name: "John Micheal",
+          position: "Veterinary",
+          photo: 
         },
         {
           id: 3,
-          name: "Alice Johnson",
+          name: "Jumairah ",
           position: "Marketing Manager",
-          photo: "https://via.placeholder.com/100"
+          photo: 
         },
         {
           id: 4,

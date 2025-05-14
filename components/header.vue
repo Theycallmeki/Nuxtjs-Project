@@ -1,14 +1,10 @@
 <template>
   <header>
     <h1>Welcome to My Nuxt.js App</h1>
-    <nav>
-      <div class="dropdown">
-        <button class="dropdown-button">Menu</button>
-        <div class="dropdown-content">
-          <nuxt-link to="/">Home</nuxt-link>
-          <nuxt-link to="/about">About</nuxt-link>
-        </div>
-      </div>
+    <nav class="navbar">
+      <nuxt-link to="/">Home</nuxt-link>
+      <nuxt-link to="/about">About</nuxt-link>
+      <nuxt-link to="/staff">Staff</nuxt-link> <!-- Added the Staff link -->
     </nav>
   </header>
 </template>
@@ -21,57 +17,58 @@ export default {
 
 <style scoped>
 header {
+  display: flex;
+  justify-content: space-between; /* Space between title and navbar */
+  align-items: center; /* Vertically align title and navbar */
   background-color: #42b983;
   color: white;
-  padding: 20px;
+  padding: 10px 20px; /* Adjust padding as needed */
+  position: fixed; /* Fix header to the top of the screen */
+  top: 0; /* Position at the top */
+  left: 0; /* Ensure it starts from the left edge */
+  width: 100%; /* Ensure it takes up the full width */
+  z-index: 10; /* Keep header above other elements */
+  box-sizing: border-box; /* Include padding in the total width calculation */
 }
 
-nav {
-  margin-top: 10px;
+h1 {
+  margin: 0; /* Remove default margin */
+  font-size: 1.5rem; /* Adjust font size */
 }
 
-/* Style for dropdown button */
-.dropdown {
+nav.navbar {
+  display: flex;
+  gap: 15px;
+  flex-grow: 1; /* Allow navbar to grow and occupy available space */
+  justify-content: flex-end; /* Align navbar links to the right */
+  margin-right: 20px; /* Add margin on the right to avoid links overlapping */
+}
+
+nav.navbar a {
   position: relative;
-  display: inline-block;
-}
-
-.dropdown-button {
-  background-color: #4CAF50;
   color: white;
-  padding: 10px 15px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-.dropdown-button:hover {
-  background-color: #3e8e41;
-}
-
-/* Dropdown menu (hidden by default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
   text-decoration: none;
-  display: block;
+  padding: 5px 10px; /* Reduced padding */
+  font-size: 1rem; /* Reduced font size */
+  transition: color 0.3s ease;
 }
 
-.dropdown-content a:hover {
-  background-color: #ddd;
+nav.navbar a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  transition: transform 0.3s ease;
+  border-radius: 2px;
 }
 
-/* Show the dropdown menu when hovering over the button */
-.dropdown:hover .dropdown-content {
-  display: block;
+nav.navbar a:hover::after {
+  transform: translateX(-50%) scaleX(1);
 }
 </style>
