@@ -1,166 +1,115 @@
-    <template>
-    <div class="staff-page">
-        <h1>Meet Our Team</h1>
-        <div class="staff-list">
-        <StaffCard
-            v-for="(staff, index) in staffList"
-            :key="index"
-            :id="staff.id"
-            :name="staff.name"
-            :position="staff.position"
-            :photo="staff.photo"
-            @staff-click="openModal"
-        />
-        </div>
+<template>
+  <div class="contact-container">
+    <h1>Contact Us</h1>
+    <form @submit.prevent="submitForm">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input v-model="form.name" type="text" id="name" required />
+      </div>
 
-        <!-- Modal for staff details -->
-        <div v-if="isModalOpen" class="modal-overlay" @click="closeModal">
-        <div class="modal-content" @click.stop>
-            <button class="close-btn" @click="closeModal">X</button>
-            <h2>{{ selectedStaff.name }}</h2>
-            <p>{{ selectedStaff.position }}</p>
-            <img :src="selectedStaff.photo" :alt="selectedStaff.name" class="staff-photo" />
-            <p>More detailed information about {{ selectedStaff.name }} will go here.</p>
-        </div>
-        </div>
-    </div>
-    </template>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input v-model="form.email" type="email" id="email" required />
+      </div>
 
-    <script>
-    import StaffCard from './StaffCard.vue';
-    import NeggyImage from '@/assets/images/neggy.jpg';  // Importing image
-    import NathImage from '@/assets/images/nath.jpg';  // Importing image
-    import CjImage from '@/assets/images/cj.jpg';
-    import JohnImage from '@/assets/images/john.jpg';
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea v-model="form.message" id="message" rows="5" required></textarea>
+      </div>
 
-    export default {
-    name: "Staff",
-    components: {
-        StaffCard
-    },
-    data() {
-        return {
-        staffList: [
-            {
-            id: 1,
-            name: "Mark Eugene G. Paras",
-            position: "Residnet Doctor",
-            photo: NathImage
-            },
-            {
-            id: 2,
-            name: "John Micheal",
-            position: "Veterinary",
-            photo: NeggyImage // Using imported image
-            },
-            {
-            id: 3,
-            name: "CJ Kurt Enriquez ",
-            position: "Obgyn",
-            photo: CjImage
-            },
-            {
-            id: 4,
-            name: "John Micheal Naluz",
-            position: "Head",
-            photo: JohnImage
-            },
-            {
-            id: 5,
-            name: "Eve Wsdsadsadsadsite",
-            position: "HR Manager",
-            photo: "https://via.placeholder.com/100"
-            },
-            {
-            id: 6,
-            name: "Chris Green",
-            position: "Developer",
-            photo: "https://via.placeholder.com/100"
-            },
-            {
-            id: 7,
-            name: "Olivia Black",
-            position: "Content Writer",
-            photo: "https://via.placeholder.com/100"
-            },
-            {
-            id: 8,
-            name: "Tom Blue",
-            position: "SEO Specialist",
-            photo: "https://via.placeholder.com/100"
-            }
-        ],
-        selectedStaff: null,
-        isModalOpen: false
-        };
-    },
-    methods: {
-        openModal(staff) {
-        this.selectedStaff = staff;
-        this.isModalOpen = true;
-        },
-        closeModal() {
-        this.isModalOpen = false;
-        this.selectedStaff = null;
-        }
-    }
+      <button type="submit">Send Message</button>
+
+      <p v-if="submitted" class="success-message">Thank you for contacting us!</p>
+    </form>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "ContactPage",
+  data() {
+    return {
+      form: {
+        name: '',
+        email: '',
+        message: ''
+      },
+      submitted: false
     };
-    </script>
+  },
+  methods: {
+    submitForm() {
+      // Simulate sending form data
+      console.log("Form submitted:", this.form);
+      this.submitted = true;
+      this.form.name = '';
+      this.form.email = '';
+      this.form.message = '';
+    }
+  }
+};
+</script>
 
-    <style scoped>
-    .staff-page {
-    padding: 2rem;
-    text-align: center;
-    }
-    .staff-list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
-    gap: 0.5rem; /* small gap between cards */
-    justify-items: center;
-    max-width: 800px;
-    margin: 0 auto;
-    }
+<style scoped>
+.contact-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 25px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
 
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
 
-    /* Modal styles */
-    .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    }
-    .modal-content {
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 500px;
-    text-align: center;
-    position: relative;
-    }
-    .staff-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    }
-    .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: red;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    padding: 0.5rem;
-    cursor: pointer;
-    }
-    .close-btn:hover {
-    background: darkred;
-    }
-    </style>
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  display: block;
+}
+
+input,
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 12px;
+  background-color: #3a86ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #265ec4;
+}
+
+.success-message {
+  margin-top: 15px;
+  color: green;
+  font-weight: bold;
+  text-align: center;
+}
+</style>
+        
