@@ -2,7 +2,7 @@
   <div class="container">
     <!-- About Content -->
     <section class="about-section">
-      <h2 class="section-title">Who We Are</h2>
+      <h2 class="section-title">Who We Are.</h2>
       <div class="about-cards">
         <!-- Mission Card -->
         <div class="about-card">
