@@ -41,7 +41,7 @@ export default {
   data() {
     return {
       mission: [
-        'Our mission at Healing Hearts Hospital is to provide exceptional, patient-centered healthcare with compassion, dignity, and respect. We are committed to delivering comprehensive medical services that address both the physical and emotional needs of our patients and their families.',
+        'Our mission at SNC Hospital is to provide exceptional, patient-centered healthcare with compassion, dignity, and respect. We are committed to delivering comprehensive medical services that address both the physical and emotional needs of our patients and their families.',
         'We strive to make quality healthcare accessible to all members of our community, regardless of background or circumstance. Through our commitment to clinical excellence, continuous improvement, and ethical practice, we aim to be the trusted healthcare partner for the communities we serve.'
       ],
       vision: [
