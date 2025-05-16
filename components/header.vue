@@ -22,7 +22,7 @@ header {
   display: flex;
   justify-content: space-between; /* Space between title and navbar */
   align-items: center; /* Vertically align title and navbar */
-  background-color: #42b983;
+  background: linear-gradient(90deg, #a2d4f3, #1e3c72); /* Light to dark blue */
   color: white;
   padding: 10px 20px; /* Adjust padding as needed */
   position: fixed; /* Fix header to the top of the screen */

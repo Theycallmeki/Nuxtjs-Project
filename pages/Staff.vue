@@ -1,26 +1,28 @@
 <template>
-  <div class="staff-page">
-    <h1>Meet Our Team</h1>
-    <div class="staff-list">
-      <StaffCard
-        v-for="(staff, index) in staffList"
-        :key="index"
-        :id="staff.id"
-        :name="staff.name"
-        :position="staff.position"
-        :photo="staff.photo"
-        @staff-click="openModal"
-      />
-    </div>
+  <div class="page-bg"> <!-- Added wrapper with blue background -->
+    <div class="staff-page">
+      <h1>Meet Our Team</h1>
+      <div class="staff-list">
+        <StaffCard
+          v-for="(staff, index) in staffList"
+          :key="index"
+          :id="staff.id"
+          :name="staff.name"
+          :position="staff.position"
+          :photo="staff.photo"
+          @staff-click="openModal"
+        />
+      </div>
 
-    <!-- Modal for staff details -->
-    <div v-if="isModalOpen" class="modal-overlay" @click="closeModal">
-      <div class="modal-content" @click.stop>
-        <button class="close-btn" @click="closeModal">X</button>
-        <h2>{{ selectedStaff.name }}</h2>
-        <p>{{ selectedStaff.position }}</p>
-        <img :src="selectedStaff.photo" :alt="selectedStaff.name" class="staff-photo" />
-        <p>More detailed information about {{ selectedStaff.name }} will go here.</p>
+      <!-- Modal for staff details -->
+      <div v-if="isModalOpen" class="modal-overlay" @click="closeModal">
+        <div class="modal-content" @click.stop>
+          <button class="close-btn" @click="closeModal">X</button>
+          <h2>{{ selectedStaff.name }}</h2>
+          <p>{{ selectedStaff.position }}</p>
+          <img :src="selectedStaff.photo" :alt="selectedStaff.name" class="staff-photo" />
+          <p>More detailed information about {{ selectedStaff.name }} will go here.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -28,8 +30,8 @@
 
 <script>
 import StaffCard from './StaffCard.vue';
-import NeggyImage from '@/assets/images/neggy.jpg';  // Importing image
-import NathImage from '@/assets/images/nath.jpg';  // Importing image
+import NeggyImage from '@/assets/images/neggy.jpg';
+import NathImage from '@/assets/images/nath.jpg';
 import CjImage from '@/assets/images/cj.jpg';
 import JohnImage from '@/assets/images/john.jpg';
 
@@ -51,7 +53,7 @@ export default {
           id: 2,
           name: "John Micheal",
           position: "Veterinary",
-          photo: NeggyImage // Using imported image
+          photo: NeggyImage
         },
         {
           id: 3,
@@ -108,19 +110,27 @@ export default {
 </script>
 
 <style scoped>
-.staff-page {
-  padding: 2rem;
-  text-align: center;
+/* Blue background wrapper */
+.page-bg {
+  background-color: #dbeafe;
+  min-height: 100vh;
+  padding: 2rem 1rem;
 }
+
+.staff-page {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .staff-list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
-  gap: 0.5rem; /* small gap between cards */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
   justify-items: center;
   max-width: 800px;
   margin: 0 auto;
 }
-
 
 /* Modal styles */
 .modal-overlay {

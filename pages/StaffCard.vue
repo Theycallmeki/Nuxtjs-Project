@@ -47,6 +47,8 @@ export default {
   cursor: pointer;          /* indicates clickability */
   transition: transform 0.1s;
   margin: 0.5rem; /* Reduced margin between cards */
+    background-color: white;  /* <-- This makes sure the card is white */
+
 }
 
 .staff-card:hover {

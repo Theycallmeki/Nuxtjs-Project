@@ -1,4 +1,5 @@
 <template>
+<div class="bg">
   <div class="carousel">
     <div 
       v-for="(slide, index) in slides" 
@@ -14,6 +15,8 @@
       <button @click="nextSlide" class="carousel-control">❯</button>
     </div>
   </div>
+</div>
+
 </template>
 
 <script setup>
@@ -57,10 +60,15 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
+.bg{
+background-color: #dbeafe; /* Added background color */
+
+}
 .carousel {
   position: relative;
   height: 600px;
   overflow: hidden;
+  
 }
 
 .carousel-item {
@@ -74,16 +82,19 @@ onBeforeUnmount(() => {
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 .carousel-item img {
   width: 100%;
   height: 100%;
   object-fit: fill; /* Ensure the image covers the entire container */
+  
 }
 
 .carousel-item.active {
   opacity: 1;
+  
 }
 
 .carousel-controls {
@@ -93,6 +104,7 @@ onBeforeUnmount(() => {
   transform: translateX(-50%);
   display: flex;
   gap: 10px;
+  
 }
 
 .carousel-control {
@@ -104,5 +116,6 @@ onBeforeUnmount(() => {
   color: white;
   font-size: 1.2rem;
   cursor: pointer;
+  
 }
 </style>

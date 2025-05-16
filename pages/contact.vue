@@ -1,26 +1,28 @@
 <template>
-  <div class="contact-container">
-    <h1>Contact Us</h1>
-    <form @submit.prevent="submitForm">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input v-model="form.name" type="text" id="name" required />
-      </div>
+  <div class="page">
+    <div class="contact-container">
+      <h1>Contact Us</h1>
+      <form @submit.prevent="submitForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input v-model="form.name" type="text" id="name" required />
+        </div>
 
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input v-model="form.email" type="email" id="email" required />
-      </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input v-model="form.email" type="email" id="email" required />
+        </div>
 
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea v-model="form.message" id="message" rows="5" required></textarea>
-      </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea v-model="form.message" id="message" rows="5" required></textarea>
+        </div>
 
-      <button type="submit">Send Message</button>
+        <button type="submit">Send Message</button>
 
-      <p v-if="submitted" class="success-message">Thank you for contacting us!</p>
-    </form>
+        <p v-if="submitted" class="success-message">Thank you for contacting us!</p>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -51,14 +53,26 @@ export default {
 </script>
 
 <style scoped>
+.page {
+  background-color: #dbeafe; /* Light blue background */
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+}
+
 .contact-container {
   max-width: 600px;
-  margin: 50px auto;
-  padding: 25px;
+  width: 100%;
   background-color: #f9f9f9;
+  padding: 25px;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
+    margin-top: 30px;
+
 }
 
 h1 {
@@ -99,6 +113,7 @@ button {
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
+  margin-top: 10px;
 }
 
 button:hover {
@@ -112,4 +127,3 @@ button:hover {
   text-align: center;
 }
 </style>
-        

@@ -12,7 +12,7 @@ export default {
 
 <style scoped>
 footer {
-  background-color: #333;
+  background: linear-gradient(90deg, #a2d4f3, #1e3c72); /* Light to dark blue */
   color: white;
   padding: 10px;
   text-align: center;

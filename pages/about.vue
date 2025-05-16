@@ -1,37 +1,39 @@
 <template>
-  <div class="container">
-    <!-- About Content -->
-    <section class="about-section">
-      <h2 class="section-title">Who We Are.</h2>
-      <div class="about-cards">
-        <!-- Mission Card -->
-        <div class="about-card">
-          <h2><span class="card-icon">🎯</span> Our Mission</h2>
-          <p v-for="(paragraph, index) in mission" :key="'mission-' + index">
-            {{ paragraph }}
-          </p>
-        </div>
+  <div class="page">
+    <div class="container">
+      <!-- About Content -->
+      <section class="about-section">
+        <h2 class="section-title">Who We Are.</h2>
+        <div class="about-cards">
+          <!-- Mission Card -->
+          <div class="about-card">
+            <h2><span class="card-icon">🎯</span> Our Mission</h2>
+            <p v-for="(paragraph, index) in mission" :key="'mission-' + index">
+              {{ paragraph }}
+            </p>
+          </div>
 
-        <!-- Vision Card -->
-        <div class="about-card">
-          <h2><span class="card-icon">👁️</span> Our Vision</h2>
-          <p v-for="(paragraph, index) in vision" :key="'vision-' + index">
-            {{ paragraph }}
-          </p>
-        </div>
+          <!-- Vision Card -->
+          <div class="about-card">
+            <h2><span class="card-icon">👁️</span> Our Vision</h2>
+            <p v-for="(paragraph, index) in vision" :key="'vision-' + index">
+              {{ paragraph }}
+            </p>
+          </div>
 
-        <!-- Goals Card -->
-        <div class="about-card">
-          <h2><span class="card-icon">🏆</span> Our Goals</h2>
-          <p>{{ goalsIntro }}</p>
-          <ul>
-            <li v-for="(goal, index) in goals" :key="'goal-' + index">
-              {{ goal }}
-            </li>
-          </ul>
+          <!-- Goals Card -->
+          <div class="about-card">
+            <h2><span class="card-icon">🏆</span> Our Goals</h2>
+            <p>{{ goalsIntro }}</p>
+            <ul>
+              <li v-for="(goal, index) in goals" :key="'goal-' + index">
+                {{ goal }}
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </div>
 </template>
 
@@ -83,11 +85,11 @@ export default {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body {
-  background-color: var(--light);
-  color: var(--dark);
-  line-height: 1.7;
-  padding: 2rem 0;
+.page {
+  background-color: #dbeafe; /* Light blue background */
+  min-height: 100vh;
+  padding-top: 2rem;
+  padding-bottom: 4rem; /* Extra space for footer if needed */
 }
 
 .container {
@@ -95,7 +97,6 @@ body {
   margin: 0 auto;
   padding: 0 1.5rem;
   margin-top: 6rem;
-
 }
 
 .about-section {
